@@ -1,4 +1,4 @@
-import { Column, MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateTags1624412702712 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
@@ -10,7 +10,6 @@ export class CreateTags1624412702712 implements MigrationInterface {
                         name: "id",
                         type: "uuid",
                         isPrimary: true,
-                        generationStrategy: "increment",
                     },
                     {
                         name: "name",

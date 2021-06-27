@@ -1,5 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
-import { v4 as uuid } from "uuid";
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+import { v4 } from "uuid";
 
 @Entity("tags")
 export class Tag {
@@ -16,6 +16,6 @@ export class Tag {
 	updatedAt: Date;
 
 	constructor() {
-		if (!this.id) this.id = uuid();
+		if (!this.id) this.id = v4();
 	}
 }
