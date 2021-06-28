@@ -27,7 +27,7 @@ export class Compliments {
 
 	@JoinColumn({ name: "tagId" })
 	@ManyToOne(() => Tag)
-	tag: Tag;
+	tagRelation: Tag;
 
 	@Column()
 	message: string;
