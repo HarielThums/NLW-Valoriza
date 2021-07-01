@@ -1,9 +1,9 @@
-import { getCustomRepository } from "typeorm";
-import { UsersRepositories } from "../repositories/UserRepositories";
-import { compare } from "bcryptjs";
-import { sign } from "jsonwebtoken";
+import { getCustomRepository } from 'typeorm';
+import { UsersRepositories } from '../repositories/UserRepositories';
+import { compare } from 'bcryptjs';
+import { sign } from 'jsonwebtoken';
 // import secret from "../config/secret.json";
-const secret = "5044b7355d91fb1f0626e9129373493b";
+const secret = '5044b7355d91fb1f0626e9129373493b';
 
 interface Credentials {
 	email: string;
@@ -16,15 +16,15 @@ export class AuthenticateUserService {
 
 		const user = await usersRepositories.findOne({ email });
 
-		if (!user) throw new Error("Email or Password incorrect");
+		if (!user) throw new Error('Email or Password incorrect');
 
 		const isValid = await compare(password, user.password);
 
-		if (!isValid) throw new Error("Email or Password incorrect");
+		if (!isValid) throw new Error('Email or Password incorrect');
 
 		const token = sign({ email: user.email }, secret, {
 			subject: user.id,
-			expiresIn: "1d",
+			expiresIn: '1d',
 		});
 
 		return token;

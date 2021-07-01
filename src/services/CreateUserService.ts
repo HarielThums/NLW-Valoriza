@@ -1,7 +1,6 @@
-import { getCustomRepository } from "typeorm";
-import { UsersRepositories } from "../repositories/UserRepositories";
-import { hash } from "bcryptjs";
-
+import { getCustomRepository } from 'typeorm';
+import { UsersRepositories } from '../repositories/UserRepositories';
+import { hash } from 'bcryptjs';
 
 interface IUserRequest {
 	name: string;
@@ -14,11 +13,11 @@ export class CreateUserService {
 	async execute({ name, email, admin = false, password }: IUserRequest) {
 		const usersRepository = getCustomRepository(UsersRepositories);
 
-		if (!email) throw new Error("Email incorrect");
+		if (!email) throw new Error('Email incorrect');
 
 		const userAlreadyExists = await usersRepository.findOne({ email });
 
-		if (userAlreadyExists) throw new Error("User already exists");
+		if (userAlreadyExists) throw new Error('User already exists');
 
 		const passwordHash = await hash(password, 10);
 
@@ -31,6 +30,6 @@ export class CreateUserService {
 
 		await usersRepository.save(user);
 
-		return user ;
+		return user;
 	}
 }

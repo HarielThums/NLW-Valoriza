@@ -1,9 +1,9 @@
-import { Column,	CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn,} from "typeorm";
-import { v4 } from "uuid";
-import { Tag } from "./Tag";
-import { User } from "./User";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import { v4 } from 'uuid';
+import { Tag } from './Tag';
+import { User } from './User';
 
-@Entity("compliments")
+@Entity('compliments')
 export class Compliments {
 	@PrimaryColumn()
 	readonly id: string;
@@ -11,21 +11,21 @@ export class Compliments {
 	@Column()
 	userSender: string;
 
-	@JoinColumn({ name: "userSender" })
+	@JoinColumn({ name: 'userSender' })
 	@ManyToOne(() => User)
 	userSenderRelation: User;
 
 	@Column()
 	userReceiver: string;
 
-	@JoinColumn({ name: "userReceiver" })
+	@JoinColumn({ name: 'userReceiver' })
 	@ManyToOne(() => User)
 	userReceiverRelation: User;
 
 	@Column()
 	tagId: string;
 
-	@JoinColumn({ name: "tagId" })
+	@JoinColumn({ name: 'tagId' })
 	@ManyToOne(() => Tag)
 	tagRelation: Tag;
 

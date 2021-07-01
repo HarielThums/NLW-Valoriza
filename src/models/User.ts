@@ -1,8 +1,8 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
-import { v4 } from "uuid";
-import { Exclude } from "class-transformer";
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import { v4 } from 'uuid';
+import { Exclude } from 'class-transformer';
 
-@Entity("users") // nome da tabela que é referenciada
+@Entity('users') // nome da tabela que é referenciada
 export class User {
 	@PrimaryColumn()
 	readonly id: string;

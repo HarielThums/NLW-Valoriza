@@ -1,5 +1,5 @@
-import { ListUserSendComplimentsService } from "../services/ListUserSendComplimentsService";
-import { Request, Response } from "express";
+import { ListUserSendComplimentsService } from '../services/ListUserSendComplimentsService';
+import { Request, Response } from 'express';
 
 export class ListUserSendComplimentsController {
 	async handle(req: Request, res: Response) {
@@ -7,9 +7,7 @@ export class ListUserSendComplimentsController {
 
 		const listUserSendComplimentsService = new ListUserSendComplimentsService();
 
-		const compliments = await listUserSendComplimentsService.execute(
-			userId
-		);
+		const compliments = await listUserSendComplimentsService.execute(userId);
 
 		return res.json(compliments);
 	}

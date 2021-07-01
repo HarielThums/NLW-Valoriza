@@ -1,6 +1,6 @@
-import { CreateUserService } from "../services/CreateUserService";
-import { Request, Response } from "express";
-import { classToPlain } from "class-transformer";
+import { CreateUserService } from '../services/CreateUserService';
+import { Request, Response } from 'express';
+import { classToPlain } from 'class-transformer';
 
 export class CreateUserController {
 	async handle(req: Request, res: Response) {
