@@ -2,6 +2,8 @@
 
 O objetivo desse projeto é aprofundar conhecimentos no desenvovilmento backend com Node.js e Typescript, juntamente com um banco de dados, aplicando conceitos de autenticação de usuários e relacionamento entre tabelas com PostgreSQL.
 
+![2021-10-10 14-23-25](https://user-images.githubusercontent.com/71266824/136707171-bfc45d3d-63df-4337-9d81-f2bbb1436d95.gif)
+
 ### Tecnologias :star: :
 - Typescript
 - Express
@@ -13,6 +15,7 @@ O objetivo desse projeto é aprofundar conhecimentos no desenvovilmento backend 
 - uuid
 - bcryptjs
 
+
 ### Rodando o projeto:
 - Requisitos:
 	- Node.js
@@ -20,7 +23,6 @@ O objetivo desse projeto é aprofundar conhecimentos no desenvovilmento backend 
 	- PostgreSQL
 	- Insomnia ou Postman
 
-- 
 - Passo 1: `Adicione suas credenciais do Postgre ao arquivo 'ormconfig.json'`
 - Passo 2: `Rode o comando 'yarn install'`
 - Passo 3: `Rode o comando 'yarn typeorm migration:run'`
